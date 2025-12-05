@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-listado',
   templateUrl: './listado.component.html',
+  standalone: false
 })
 export class ListadoComponent{
 

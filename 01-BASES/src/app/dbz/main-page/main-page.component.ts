@@ -6,6 +6,7 @@ import { Personaje } from '../intefaces/dbz.interface';
 @Component({
   selector: 'app-main-page',
   templateUrl: './main-page.component.html',
+  standalone: false
 })
 export class MainPageComponent{
 

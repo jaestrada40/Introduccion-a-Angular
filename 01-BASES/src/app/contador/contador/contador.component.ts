@@ -15,7 +15,8 @@ import { Component } from '@angular/core';
 
             <button (click)=" acumular( -base ) "> - {{ base }} </button>
     
-    `
+    `,
+    standalone: false
 })
 
 

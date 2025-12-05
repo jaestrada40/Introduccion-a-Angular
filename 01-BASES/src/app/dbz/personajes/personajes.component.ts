@@ -5,6 +5,7 @@ import { DbzService } from '../services/dbz.service';
 @Component({
   selector: 'app-personajes',
   templateUrl: './personajes.component.html',
+  standalone: false
 })
 export class PersonajesComponent {
 

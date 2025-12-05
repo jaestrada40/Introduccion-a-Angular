@@ -3,7 +3,8 @@ import { GifsService } from '../../gifs/services/gifs.service';
 
 @Component({
   selector: 'app-sidebar',
-  templateUrl: './sidebar.component.html'
+  templateUrl: './sidebar.component.html',
+  standalone: false
 })
 export class SidebarComponent {
   

@@ -4,7 +4,8 @@ import { Component } from "@angular/core";
 
 @Component({
     selector: 'app-heroe',
-    templateUrl: './heroe.component.html'
+    templateUrl: './heroe.component.html',
+    standalone: false
 })
 
 

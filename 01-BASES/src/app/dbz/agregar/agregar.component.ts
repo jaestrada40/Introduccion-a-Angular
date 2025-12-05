@@ -5,6 +5,7 @@ import { DbzService } from '../services/dbz.service';
 @Component({
   selector: 'app-agregar',
   templateUrl: './agregar.component.html',
+  standalone: false
 })
 export class AgregarComponent {
 
