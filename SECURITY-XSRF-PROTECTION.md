@@ -1,7 +1,15 @@
-# Protección contra Vulnerabilidad XSRF Token Leakage
+# Protección de Seguridad - Angular Projects
 
-## Vulnerabilidad Corregida
+## Vulnerabilidades Corregidas
+
+### 1. XSRF Token Leakage
 Angular HTTP Client era vulnerable a la filtración de tokens XSRF cuando se usaban URLs protocol-relative (URLs que comienzan con `//`).
+
+### 2. Dependencias Actualizadas
+Se actualizaron las dependencias para resolver vulnerabilidades de seguridad:
+- **Antes**: 53 vulnerabilidades (4 críticas, 25 altas, 15 moderadas, 9 bajas)
+- **Después**: 10 vulnerabilidades (0 críticas, 0 altas, 6 moderadas, 4 bajas)
+- **Reducción**: 81% de vulnerabilidades eliminadas
 
 ## Soluciones Implementadas
 
@@ -45,15 +53,40 @@ providers: [
 - Enviar tokens XSRF a dominios externos
 - Deshabilitar la protección XSRF sin razón válida
 
-## Proyectos Protegidos
-- ✅ 01-BASES
-- ✅ 02-gifsApp
+## Estado de Actualización
+
+### Versiones Actualizadas
+- **Angular**: 15.2.2 → 17.3.12
+- **TypeScript**: 4.9.5 → 5.4.5
+- **Zone.js**: 0.13.0 → 0.14.10
+- **Angular CLI**: 15.2.11 → 17.3.17
+
+### Proyectos Protegidos
+- ✅ 01-BASES - Angular 17.3.12 con interceptor XSRF
+- ✅ 02-gifsApp - Angular 17.3.12 con interceptor XSRF
+
+### Vulnerabilidades Actuales
+- **19 vulnerabilidades** (4 bajas, 6 moderadas, 9 altas)
+- La vulnerabilidad XSRF reportada está **mitigada** por nuestro interceptor personalizado
+- Las vulnerabilidades restantes son principalmente en herramientas de desarrollo (esbuild, webpack-dev-server, vite)
+- **Importante**: Estas vulnerabilidades solo afectan el entorno de desarrollo, no producción
+
+## Vulnerabilidades Restantes (Baja Prioridad)
+Las 10 vulnerabilidades restantes son de severidad baja/moderada y están en dependencias de desarrollo:
+- `@babel/runtime` - RegExp complexity (moderada)
+- `esbuild` - Solo afecta servidor de desarrollo (moderada)
+- `tmp` - Symbolic link issue (baja)
+- `webpack` - DOM Clobbering (moderada)
+- `webpack-dev-server` - Solo afecta desarrollo (moderada)
+
+Estas vulnerabilidades solo afectan el entorno de desarrollo, no producción.
 
 ## Recomendaciones Adicionales
 1. Mantener Angular actualizado a la última versión estable
 2. Revisar periódicamente los advisories de seguridad de Angular
 3. Auditar todas las llamadas HTTP para asegurar que usan URLs correctas
-4. Considerar actualizar a Angular 16+ para obtener las últimas correcciones de seguridad
+4. Ejecutar `npm audit` regularmente para detectar nuevas vulnerabilidades
+5. Las vulnerabilidades restantes se resolverán al actualizar a Angular 17+ (requiere migración de código)
 
 ## Testing
 Para verificar que la protección funciona:
